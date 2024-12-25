@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electron + Python App</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <div class="container mx-auto p-6">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">Welcome to Electron + Python App!</h1>
+
+        <!-- Fetch Meetings Button -->
+        <div class="text-center mt-6">
+            <button id="fetchMeetingsButton"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Fetch Meetings
+            </button>
+        </div>
+
+        <!-- Meetings Section -->
+        <div id="meetingsContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+            <p class="col-span-full text-center text-gray-500">Click "Fetch Meetings" to load meetings.</p>
+        </div>
+
+        <!-- Record Audio Button -->
+        <div class="text-center mt-6">
+            <button id="recordAudioButton"
+                class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Record Audio
+            </button>
+        </div>
+
+        <!-- Audio Status and Results -->
+        <div id="audioStatus" class="mt-6 text-center text-gray-700"></div>
+        <div id="audioFile" class="mt-2 text-center text-gray-600"></div>
+        <div id="transcription" class="mt-2 text-center text-gray-600"></div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>
