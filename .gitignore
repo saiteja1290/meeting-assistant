@@ -3,3 +3,5 @@ frontend/node_modules
 backend/creds.json
 backend/token.json
 backend/__pycache__
+backend/temp_audio
+.env

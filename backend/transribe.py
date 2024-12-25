@@ -1,5 +1,15 @@
+import os
+from dotenv import load_dotenv
 from groq import Groq
-client = Groq(api_key="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")
+
+# Load environment variables from .env file in the root directory
+load_dotenv()
+
+# Retrieve the GROQ_API value from environment variables
+api_key = os.getenv('GROQ_API')
+
+# Initialize the Groq client with the API key
+client = Groq(api_key=api_key)
 def transcribe_audio(filename):
     with open(filename, "rb") as file:
         transcription = client.audio.transcriptions.create(

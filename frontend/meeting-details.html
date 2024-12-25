@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-black">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white min-h-screen">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Back Button -->
+        <button onclick="window.location.href='index.html'"
+            class="mb-6 bg-white text-black hover:bg-gray-200 font-bold py-2 px-4 rounded transition duration-200">
+            ← Back
+        </button>
+
+        <!-- Meeting Details Card -->
+        <div id="meetingDetails" class="bg-gray-900 rounded-lg p-6 mb-8">
+            <h1 id="meetingTitle" class="text-2xl sm:text-3xl font-bold mb-4"></h1>
+            <p id="meetingTime" class="text-gray-400 mb-4"></p>
+            <a id="meetingLink" class="text-blue-400 hover:underline" target="_blank"></a>
+        </div>
+
+        <!-- Recording Controls -->
+        <div class="text-center mb-8">
+            <button id="recordAudioButton"
+                class="bg-white text-black hover:bg-gray-200 font-bold py-2 px-6 rounded transition duration-200">
+                Start Recording
+            </button>
+        </div>
+
+        <!-- Terminal Style Output -->
+        <div class="bg-gray-900 rounded-lg p-4 font-mono">
+            <div id="audioStatus" class="text-green-500 mb-2">$ Ready</div>
+            <div id="audioFile" class="text-gray-400 mb-2"></div>
+            <div class="border-t border-gray-800 my-4"></div>
+            <div class="text-green-500 mb-2">$ Transcription Output</div>
+            <div id="transcription" class="text-gray-300 whitespace-pre-wrap"></div>
+        </div>
+    </div>
+
+    <script src="details.js"></script>
+</body>
+
+</html>

@@ -3,18 +3,24 @@ const path = require('path');
 
 function createWindow() {
     const win = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1024,
+        height: 768,
         webPreferences: {
-            nodeIntegration: true
-        }
+            nodeIntegration: true,
+            contextIsolation: false
+        },
+        backgroundColor: '#000000'
     });
 
-    win.loadFile(path.join(__dirname, 'index.html'));
+    win.loadFile('index.html');
 }
 
 app.whenReady().then(createWindow);
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit();
+});
+
+app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow();
 });
